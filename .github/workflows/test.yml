@@ -33,4 +33,6 @@ jobs:
         run: uv sync
 
       - name: Test with pytest
-        run: uv run pytest --cov=./src/emoji_sentiment -v --cov-report=term ./tests
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          uv run pytest --cov=./src/emoji_sentiment -v --cov-report=term ./tests
