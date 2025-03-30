@@ -1,18 +1,21 @@
 [project]
 name = "emoji-sentiment"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.0.1"
+description = "A Python package for emoji sentiment analysis."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "emoji-data-python>=1.6.0",
-    "plotly>=6.0.1",
     "pydantic>=2.11.1",
-    "streamlit>=1.44.0",
 ]
 
 [dependency-groups]
 dev = [
+"plotly>=6.0.1",
+"streamlit>=1.44.0",
     "pytest>=8.3.5",
     "pytest-cov>=6.0.0",
+    "setuptools>=78.1.0",
+    "twine>=6.1.0",
+    "wheel>=0.45.1",
 ]

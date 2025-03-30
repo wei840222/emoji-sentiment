@@ -6,7 +6,7 @@ from emoji_sentiment import EmojiSentiment
 if __name__ == "__main__":
     emoji_sentiment = EmojiSentiment()
 
-    st.title("Emoji Sentiment Analysis")
+    st.title("Emoji Sentiment")
     st.markdown(
         "Dataset: [Emoji sentiment ranking](https://kt.ijs.si/data/Emoji_sentiment_ranking/)")
 
