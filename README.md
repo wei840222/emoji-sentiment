@@ -2,6 +2,8 @@
 
 A Python package for emoji sentiment analysis.
 
+<img width="531" alt="image" src="https://github.com/user-attachments/assets/5b53da6f-be97-4ec2-a2d5-dc09bd6f9917" />
+
 ## Installation
 
 ```bash
