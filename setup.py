@@ -1,12 +1,11 @@
 from setuptools import setup, find_packages
-from src.emoji_sentiment import __version__
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
     name="emoji-sentiment",
-    version=__version__,
+    version="0.0.3",
     description="A Python package for emoji sentiment analysis.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -18,16 +17,13 @@ setup(
     install_requires=[
         "emoji-data-python",
     ],
-    python_requires=">=3.6",
+    python_requires=">=3.10",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
     ],
 )
