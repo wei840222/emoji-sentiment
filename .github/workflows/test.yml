@@ -1,0 +1,36 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python dependencies
+        run: uv sync
+
+      - name: Lint with pylint
+        run: uv run pylint ./src/emoji_sentiment
+
+  test:
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python dependencies
+        run: uv sync
+
+      - name: Test with pytest
+        run: uv run pytest --cov=./src/emoji_sentiment -v --cov-report=term ./tests

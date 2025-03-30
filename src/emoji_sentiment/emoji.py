@@ -1,3 +1,5 @@
+"""Module for emoji sentiment analysis and data structures."""
+
 import os
 import csv
 from typing import Union, Dict, Annotated, List
@@ -30,7 +32,7 @@ class EmojiSentiment():
 
     def __init__(self, round_to: int = 3):
         self._data: Dict[str, Emoji] = {}
-        with open(self.CSV_FILE_PATH, newline="") as f:
+        with open(self.CSV_FILE_PATH, newline="", encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 samples = int(row["Negative"]) + \
                     int(row["Neutral"]) + int(row["Positive"])
@@ -46,9 +48,11 @@ class EmojiSentiment():
 
     @property
     def all(self) -> List[Emoji]:
+        """Return a list of all emojis with their sentiment scores."""
         return list(self._data.values())
 
     def get(self, short_name: str) -> Union[Emoji, None]:
+        """Return the emoji with the given short name."""
         if (emoji_char := emoji_data_python.emoji_short_names.get(short_name.lower())) is None:
             return None
         if (unicode := f"0x{emoji_char.unified.lower()}") not in self._data:

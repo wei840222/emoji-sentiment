@@ -1,6 +1,6 @@
 [project]
 name = "emoji-sentiment"
-version = "0.0.4"
+version = "0.0.0"
 description = "A Python package for emoji sentiment analysis."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -18,4 +18,5 @@ dev = [
     "setuptools>=78.1.0",
     "twine>=6.1.0",
     "wheel>=0.45.1",
+    "pylint>=3.3.6",
 ]

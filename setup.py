@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="emoji-sentiment",
-    version="0.0.4",
+    version="0.0.0",
     description="A Python package for emoji sentiment analysis.",
     long_description=long_description,
     long_description_content_type="text/markdown",
