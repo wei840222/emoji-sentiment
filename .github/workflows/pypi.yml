@@ -21,6 +21,8 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
         run: |
+          echo "GITHUB_REF: $GITHUB_REF"
           sed -i "s|version=\"0.0.0\",|version=\"${GITHUB_REF/refs\/tags\//}\",|g" setup.py
+          sed -i "s|version = \"0.0.0\"|version = \"${GITHUB_REF/refs\/tags\//}\"|g" pyproject.toml
           uv run python setup.py sdist bdist_wheel
           uv run twine upload dist/*
