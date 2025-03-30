@@ -17,7 +17,7 @@ from emoji_sentiment import EmojiSentiment
 
 emoji_sentiment = EmojiSentiment()
 smile_emoji = emoji_sentiment.get("smile")
-print(smile_emoji.sentiment)
+print(smile_emoji)
 ```
 
 ## Run demo local
